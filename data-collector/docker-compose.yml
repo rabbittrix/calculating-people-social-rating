@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis:latest
+    hostname: redis-local
+    ports:
+    - 6379:6379
+
+  rabbitmq3:
+    image: rabbitmq:3-management
+    hostname: rabbitmq-local
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+    - 15672:15672
+    - 5672:5672
